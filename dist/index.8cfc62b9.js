@@ -617,12 +617,12 @@ var _shoppingCartJsDefault = parcelHelpers.interopDefault(_shoppingCartJs);
 // Old Module pattern
 //////////////////////////////////////
 const ShoppingCart2 = function() {
-    const cart = [];
+    const cart1 = [];
     const shippingCost = 10;
     const totalPrice = 237;
     const totalQuantity = 23;
     const addToCart = (product, quantity)=>{
-        cart.push({
+        cart1.push({
             product,
             quantity
         });
@@ -633,7 +633,7 @@ const ShoppingCart2 = function() {
     };
     return {
         addToCart,
-        cart,
+        cart: cart1,
         totalPrice,
         totalQuantity
     };
@@ -643,6 +643,16 @@ ShoppingCart2.addToCart("pizzas", 4);
 console.log(ShoppingCart2);
 console.log(ShoppingCart2.shippingCost); // Made private by not returning
 if (module.hot) module.hot.accept();
+class Person {
+    greeting = "Hi";
+    constructor(name){
+        this.name = name;
+        console.log(`${this.greeting}, {this.name}`);
+    }
+}
+const sean = new Person("Sean");
+console.log(cart.find((el)=>el.quantity >= 2));
+Promise.resolve("TEST").then((x)=>console.log(x));
 
 },{"./node_modules/lodash-es/cloneDeep.js":"dd5At","./shoppingCart.js":"l6bJl","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dd5At":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

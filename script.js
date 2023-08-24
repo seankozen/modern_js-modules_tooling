@@ -4,8 +4,10 @@
 //console.log(price, tq);
 //addToCart('bread', 5);
 //console.log(shippingCost);
+import './node_modules/core-js/actual.js';
 
 import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+
 
 
 // import { shippingCost } from "./shoppingCart";
@@ -81,6 +83,20 @@ console.log(ShoppingCart2.shippingCost);  // Made private by not returning
 
 
 if(module.hot) {
-  module.hot.accept()
+  module.hot.accept();
 };
+
+class Person {
+  greeting = 'Hi';
+  constructor(name) {
+    this.name = name;
+    console.log(`${this.greeting}, {this.name}`);
+  }
+}
+
+const sean = new Person('Sean');
+
+
+console.log(cart.find(el => el.quantity >=2));
+Promise.resolve('TEST').then(x => console.log(x));
 
