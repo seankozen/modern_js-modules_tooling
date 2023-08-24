@@ -20,11 +20,11 @@ import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
 // console.log(ShoppingCart.tq);
 
 // Don't mix named exports and default exports in the same module
-// import add from './shoppingCart.js';
+import add from './shoppingCart.js';
 
-// add('pizza', 5);
-// add('bread', 5);
-// add('apples', 10);
+add('pizza', 5);
+add('bread', 5);
+add('apples', 10);
 
 // console.log('Start');
 
@@ -80,5 +80,7 @@ console.log(ShoppingCart2);
 console.log(ShoppingCart2.shippingCost);  // Made private by not returning
 
 
-
+if(module.hot) {
+  module.hot.accept()
+};
 
