@@ -4,9 +4,20 @@
 //console.log(price, tq);
 //addToCart('bread', 5);
 //console.log(shippingCost);
-import './node_modules/core-js/actual.js';
+import './node_modules/core-js/actual';
 
 import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+
+const state = {
+    cart: [
+      {product: 'bread', quantity: 5},
+      {product: 'pizza', quantity: 5},
+    ],
+    user: {loggedIn: true },
+};
+
+const stateClone = Object.assign({}, state);
+const stateDeepClone = cloneDeep(state);
 
 
 
@@ -22,7 +33,7 @@ import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
 // console.log(ShoppingCart.tq);
 
 // Don't mix named exports and default exports in the same module
-import add from './shoppingCart.js';
+import add, { cart } from './shoppingCart.js';
 
 add('pizza', 5);
 add('bread', 5);
